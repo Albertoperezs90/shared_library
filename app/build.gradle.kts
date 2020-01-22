@@ -25,6 +25,7 @@ android {
 }
 
 dependencies {
+    implementation (project(":mvp"))
     implementation (Dependencies.Kotlin.kotlin_std)
     implementation (Dependencies.SupportLibs.appcompat)
     implementation (Dependencies.Kotlin.android_extensions)

@@ -1,12 +1,14 @@
 package com.aperezsi.shared
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.aperezsi.commons.contract.MvpContract
+import com.aperezsi.commons.view.BaseActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity<MainPresenter<MainActivity>>(), MvpContract.View {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        presenter?.onAttach(this)
     }
 }
