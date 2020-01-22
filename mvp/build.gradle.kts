@@ -28,6 +28,10 @@ dependencies {
     implementation (Dependencies.SupportLibs.appcompat)
     implementation (Dependencies.Kotlin.android_extensions)
     implementation (Dependencies.SupportLibs.constraint_layout)
+
+    implementation (Dependencies.DependencyInjection.dagger)
+    kapt (Dependencies.DependencyInjection.daggerCompiler)
+
     testImplementation (Dependencies.TestLibs.junit)
 }
 
