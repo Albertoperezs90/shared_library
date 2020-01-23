@@ -7,6 +7,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.aperezsi.commons.di.CommonsComponent
+import com.aperezsi.commons.di.CommonsModule
 import com.aperezsi.commons.di.DaggerCommonsComponent
 import com.aperezsi.commons.viewmodel.BaseViewModel
 import javax.inject.Inject
@@ -22,6 +23,7 @@ abstract class BaseActivity<B : ViewDataBinding, VM : BaseViewModel> : AppCompat
 
     val commonsComponent: CommonsComponent by lazy {
         DaggerCommonsComponent.builder()
+            .commonsModule(CommonsModule(applicationContext))
             .build()
     }
 

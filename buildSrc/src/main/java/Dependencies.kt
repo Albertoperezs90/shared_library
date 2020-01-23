@@ -15,6 +15,7 @@ private const val daggerVersion = "2.5"
 
 //data libs
 private const val retrofitVersion = "2.7.1"
+private const val interceptorVersion = "4.2.1"
 
 //test libs
 private const val junitVersion = "4.12"
@@ -59,6 +60,7 @@ object Dependencies {
 
     object DataLibs {
         const val retrofit = "com.squareup.retrofit2:retrofit:$retrofitVersion"
+        const val interceptor = "com.squareup.okhttp3:logging-interceptor:$interceptorVersion"
     }
 
     object TestLibs {

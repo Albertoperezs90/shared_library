@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
+
 plugins {
     id("com.android.library")
     kotlin("android")
@@ -40,8 +42,11 @@ dependencies {
     implementation (Dependencies.SupportLibs.appcompat)
     implementation (Dependencies.SupportLibs.constraint_layout)
 
+    implementation (Dependencies.DataLibs.interceptor)
+
     implementation (Dependencies.DependencyInjection.dagger)
     kapt (Dependencies.DependencyInjection.daggerCompiler)
+
 
     testImplementation (Dependencies.TestLibs.junit)
     testImplementation (Dependencies.TestLibs.lifecycleTest)
