@@ -22,13 +22,30 @@ android {
         }
     }
 
+    dataBinding {
+        isEnabled = true
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
 }
 
 dependencies {
-    implementation (project(":mvp"))
-    implementation (Dependencies.Kotlin.kotlin_std)
-    implementation (Dependencies.SupportLibs.appcompat)
-    implementation (Dependencies.Kotlin.android_extensions)
-    implementation (Dependencies.SupportLibs.constraint_layout)
-    testImplementation (Dependencies.TestLibs.junit)
+    implementation(project(":commons"))
+    implementation(Dependencies.Kotlin.kotlin_std)
+    implementation(Dependencies.SupportLibs.appcompat)
+    implementation(Dependencies.Kotlin.coroutinesAndroid)
+    implementation(Dependencies.Kotlin.android_extensions)
+    implementation(Dependencies.SupportLibs.constraint_layout)
+    implementation(Dependencies.AndroidLibs.lifecycleExtensions)
+
+    implementation(Dependencies.DataLibs.retrofit)
+
+    implementation(Dependencies.DependencyInjection.dagger)
+    kapt(Dependencies.DependencyInjection.daggerCompiler)
+
+    testImplementation(Dependencies.TestLibs.junit)
 }

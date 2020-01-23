@@ -1,2 +1,2 @@
-include(":app", ":mvp", ":mvvm")
-rootProject.name="Shared"
+include(":app", ":commons")
+rootProject.name = "Shared"
