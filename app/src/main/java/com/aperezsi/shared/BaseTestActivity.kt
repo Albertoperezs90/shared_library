@@ -6,7 +6,7 @@ import com.aperezsi.commons.viewmodel.BaseViewModel
 
 abstract class BaseTestActivity<V : ViewDataBinding, VM : BaseViewModel> : BaseActivity<V, VM>() {
 
-    
+
     lateinit var viewmodel: VM
 
     override fun getViewModel(): VM? = viewmodel
