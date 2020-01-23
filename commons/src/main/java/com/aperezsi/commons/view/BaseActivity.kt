@@ -10,6 +10,8 @@ import com.aperezsi.commons.viewmodel.BaseViewModel
 
 abstract class BaseActivity<B : ViewDataBinding, VM : BaseViewModel> : AppCompatActivity() {
 
+    lateinit var viewmodel: VM
+
     var binding: B? = null
 
     val commonsComponent: CommonsComponent by lazy {
@@ -24,8 +26,6 @@ abstract class BaseActivity<B : ViewDataBinding, VM : BaseViewModel> : AppCompat
     }
 
     abstract fun getLayout(): Int
-    abstract fun getViewModel(): VM?
-    abstract fun inject()
     abstract fun bind(binding: B)
     abstract fun initialize()
 }
