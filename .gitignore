@@ -17,3 +17,5 @@
 buildSrc/build/kotlin/compileKotlin/caches-jvm/inputs/
 
 buildSrc/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/
+
+buildSrc/build/classes/kotlin/main/
