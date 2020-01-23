@@ -2,8 +2,9 @@ package com.aperezsi.shared
 
 import com.aperezsi.commons.viewmodel.BaseViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class MainViewModel(private val mainUseCase: MainUseCase) : BaseViewModel() {
+class MainViewModel @Inject constructor(private val mainUseCase: MainUseCase) : BaseViewModel() {
 
     fun load() {
         viewModelScope.launch {
