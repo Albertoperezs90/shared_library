@@ -10,8 +10,6 @@ import com.aperezsi.commons.viewmodel.BaseViewModel
 
 abstract class BaseActivity<B : ViewDataBinding, VM : BaseViewModel> : AppCompatActivity() {
 
-    lateinit var viewModel: VM
-
     var binding: B? = null
 
     val commonsComponent: CommonsComponent by lazy {
@@ -22,12 +20,11 @@ abstract class BaseActivity<B : ViewDataBinding, VM : BaseViewModel> : AppCompat
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, getLayout())
-        inject()
-        bind(binding!!)
         initialize()
     }
 
     abstract fun getLayout(): Int
+    abstract fun getViewModel(): VM?
     abstract fun inject()
     abstract fun bind(binding: B)
     abstract fun initialize()
