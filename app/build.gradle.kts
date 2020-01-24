@@ -48,4 +48,7 @@ dependencies {
     kapt(Dependencies.DependencyInjection.daggerCompiler)
 
     testImplementation(Dependencies.TestLibs.junit)
+    testImplementation(Dependencies.TestLibs.mockito)
+    testImplementation(Dependencies.TestLibs.mockitoKotlin)
+    testImplementation(Dependencies.TestLibs.lifecycleTest)
 }

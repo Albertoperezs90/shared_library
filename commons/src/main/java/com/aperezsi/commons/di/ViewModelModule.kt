@@ -6,7 +6,7 @@ import com.aperezsi.commons.viewmodel.ViewModelFactory
 import dagger.Module
 import dagger.Provides
 
-@Module
+@Module(includes = [ScopeModule::class])
 class ViewModelModule {
 
     @Provides

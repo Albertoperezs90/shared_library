@@ -2,14 +2,14 @@ package com.aperezsi.commons.viewmodel
 
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
+import kotlin.coroutines.CoroutineContext
 
-abstract class BaseViewModel : ViewModel() {
+abstract class BaseViewModel(private val scope: CoroutineContext) : ViewModel() {
 
     private val job = SupervisorJob()
 
-    protected val viewModelScope get() = CoroutineScope(Dispatchers.Main + job)
+    protected val viewModelScope get() = CoroutineScope(scope + job)
 
 
 }

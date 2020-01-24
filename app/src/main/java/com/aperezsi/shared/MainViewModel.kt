@@ -1,19 +1,24 @@
 package com.aperezsi.shared
 
 import com.aperezsi.commons.viewmodel.BaseViewModel
-import kotlinx.coroutines.delay
+import com.aperezsi.commons.viewmodel.ViewModelScope
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+import javax.inject.Named
 
-class MainViewModel @Inject constructor(private val mainUseCase: MainUseCase) : BaseViewModel() {
+class MainViewModel @Inject constructor(
+    private val mainUseCase: MainUseCase,
+    @Named("IO") scope: ViewModelScope
+) : BaseViewModel(scope.context) {
+
+    var lol: String? = null
 
     fun load() {
         viewModelScope.launch {
             println("Viewmodel calling use case")
-            delay(5000)
             val useCase = mainUseCase.execute("params")
             println("Viewmodel already has called use case")
-            println(useCase.await().toRightOrNull())
+            lol = useCase.await().toRightOrNull()
         }
     }
 

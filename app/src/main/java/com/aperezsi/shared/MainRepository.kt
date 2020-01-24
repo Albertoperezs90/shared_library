@@ -10,5 +10,5 @@ class MainRepository(private val mainApio: MainApio) : Repository() {
         val result = mainApio.getData().await()
         return Either.Right(result.string())
     }
-    
+
 }

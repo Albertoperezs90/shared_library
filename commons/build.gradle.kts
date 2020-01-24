@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
-
 plugins {
     id("com.android.library")
     kotlin("android")
@@ -8,7 +6,7 @@ plugins {
     id("com.github.dcendents.android-maven")
 }
 
-group="com.github.Albertoperezs90"
+group = "com.github.Albertoperezs90"
 
 android {
     compileSdkVersion(Dependencies.Android.compileSdk)
@@ -33,22 +31,21 @@ android {
 }
 
 dependencies {
-    implementation (Dependencies.Kotlin.kotlin_std)
-    implementation (Dependencies.Kotlin.coroutines)
-    implementation (Dependencies.Kotlin.android_extensions)
+    implementation(Dependencies.Kotlin.kotlin_std)
+    implementation(Dependencies.Kotlin.coroutines)
+    implementation(Dependencies.Kotlin.android_extensions)
 
-    implementation (Dependencies.AndroidLibs.lifecycleExtensions)
+    implementation(Dependencies.AndroidLibs.lifecycleExtensions)
 
-    implementation (Dependencies.SupportLibs.appcompat)
-    implementation (Dependencies.SupportLibs.constraint_layout)
+    implementation(Dependencies.DependencyInjection.dagger)
+    kapt(Dependencies.DependencyInjection.daggerCompiler)
 
-    implementation (Dependencies.DataLibs.interceptor)
+    implementation(Dependencies.SupportLibs.appcompat)
+    implementation(Dependencies.SupportLibs.constraint_layout)
 
-    implementation (Dependencies.DependencyInjection.dagger)
-    kapt (Dependencies.DependencyInjection.daggerCompiler)
+    implementation(Dependencies.DataLibs.interceptor)
 
-
-    testImplementation (Dependencies.TestLibs.junit)
-    testImplementation (Dependencies.TestLibs.lifecycleTest)
+    testImplementation(Dependencies.TestLibs.junit)
+    implementation(Dependencies.TestLibs.lifecycleTest)
 }
 
